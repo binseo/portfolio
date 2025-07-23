@@ -315,7 +315,8 @@ header .header_wrap .nav_container .logo a {
     }
 
     /* ################## li over 클래스가 추가 되었을 때 #################### */
-    header .header_wrap .nav_container .gnb .gnb_wrap ul.depth1 > li.over > a {
+    header.fixed .header_wrap .nav_container .gnb .gnb_wrap ul.depth1 > li.over > a,
+    header.menu_over .header_wrap .nav_container .gnb .gnb_wrap ul.depth1 > li.over > a {
         color: var(--main-color);
     }
 
@@ -420,6 +421,10 @@ header .header_wrap .nav_container .logo a {
     header {
         background-color: transparent;
     }
+    header.fixed {
+        background-color: #fff;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+    }
     header .header_wrap .nav_container .logo {
         z-index: 1;
     }
@@ -427,6 +432,7 @@ header .header_wrap .nav_container .logo a {
         width: 115px;
         height: 20px;
     }
+    header.fixed .header_wrap .nav_container .logo a,
     header.menu_open .header_wrap .nav_container .logo a {
         background-image: url(../images/common/logo.svg);
     }
@@ -785,3 +791,12 @@ header .header_wrap .nav_container .logo a {
 } /* @media */
 
 
+
+footer {
+    margin: 500px 0 0 0;
+}
+
+
+/* .fp-watermark {
+    display: none;
+} */

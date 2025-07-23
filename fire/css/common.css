@@ -23,7 +23,8 @@ html, body {
 @media screen and (max-width:1600px) {
     .wrapper {
         width: auto;
-        margin: 0 0 0 140px; /* 가운데  auto 말고 변경 할수도 있음 */
+        margin: 0 80px;
+        padding: 0 20px;
     }
 }
 

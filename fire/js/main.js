@@ -6,7 +6,7 @@ $(document).ready(function(){
 		navigationTooltips: ['Main', '자주 찾는 서비스', '한눈에 보는 소식', '활동 사진', '119 체험 센터', '소방서 안내', 'footer'], /* 툴팁 */
 		showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
 		
-		lockAnchors: true,
+		lockAnchors: false, // 수정해야함!! true !!!
 		anchors: ['main', 'service', 'news', 'action', 'center', 'map', 'footer'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
 
 		autoScrolling:true, /* 한페이지씩 스크롤 */
@@ -39,7 +39,7 @@ $(document).ready(function(){
 			}
 		},
 
-		responsiveWidth: 769, /* fullpage를 적용시키지 않을 모바일 사이즈 (768부터 모바일) */
+		responsiveWidth: 1025, /* fullpage를 적용시키지 않을 모바일 사이즈 (768부터 모바일) */
         responsiveHeight: 700 /* 브라우저 높이가 700이하로 줄면 fullpage 안함 */
         
 	});// fullpage
