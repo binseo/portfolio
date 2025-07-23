@@ -1,0 +1,396 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css);
+
+
+
+.visual .swiper {
+    width: 100%;
+    height: 100dvh; /* 화면의 높이에 꽉 맞게 */
+    position: relative;
+}
+
+
+.visual .swiper .swiper-slide {
+    position: relative;
+    min-height: 800px;
+}
+.visual .swiper .swiper-slide::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24%;
+    height: 100%;
+    background-color: rgba(158,24,24,0.5);
+    z-index: -1;
+}
+
+
+.visual .swiper .swiper-slide.bg01 {
+    background: url(../images/main/visual_img01.jpg) no-repeat center center / cover;
+}
+.visual .swiper .swiper-slide.bg02 {
+    background: url(../images/main/visual_img02.jpg) no-repeat center center / cover;
+}
+.visual .swiper .swiper-slide.bg03 {
+    background: url(../images/main/visual_img03.jpg) no-repeat center center / cover;
+}
+
+.visual .swiper .swiper-slide .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 290px 0;
+    height: 100%;
+}
+
+.visual .swiper .swiper-slide h3 {
+    font-size: var(--display-size);
+    color: #fff;
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+}
+.visual .swiper .swiper-slide h3::after {
+    content: "";
+    position: absolute;
+    left: 25%; /* ????????? */
+    bottom: 230px;
+    width: 812px;
+    height: 91px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.visual .swiper .swiper-slide.bg01 h3::after {
+    background-image: url(../images/main/visual_bg01.png);
+}
+.visual .swiper .swiper-slide.bg02 h3::after {
+    background-image: url(../images/main/visual_bg02.png);
+}
+.visual .swiper .swiper-slide.bg03 h3::after {
+    background-image: url(../images/main/visual_bg03.png);
+}
+
+.visual .swiper .inner {
+    max-width: 1260px;
+    width: auto;
+    margin: 0 auto;
+    padding: 0 20px; /* 브라우저 작아질 때 여백 확보 */
+    position: relative;
+    bottom: 20%;
+}
+.visual .swiper .paging {
+    position: absolute;
+    bottom: 22%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+.visual .swiper .paging .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.visual .swiper .paging .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+}
+.visual .swiper .paging .swiper-pagination-bullet {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 1;
+    margin: 0;
+    background-color: rgba(255,255,255,0.5);
+}
+.visual .swiper .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+.visual .swiper .paging .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+}
+
+
+@media screen and (min-width:769px) {
+    /* 769px pc버전에만 적용 */
+    .visual .ctrl_wrap {
+        position: absolute;
+        right: calc(50% - 630px);
+        bottom: 19%;
+        display: flex;
+        justify-content: right;
+        z-index: 1;
+    }
+    .visual .ctrl_wrap button {
+        border: 1px solid #fff;
+        border-radius: 50%; 
+        width: 40px;  
+        height: 40px;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .visual .ctrl_wrap button.btn_prev {
+        margin-right: 10px;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_82_24623' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='22' height='22'%3E%3Crect width='22' height='22' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_82_24623)'%3E%3Cpath d='M8.75412 10.998L15.4916 17.7355C15.7208 17.9647 15.8316 18.2321 15.8239 18.5376C15.8163 18.8432 15.6979 19.1105 15.4687 19.3397C15.2395 19.5689 14.9722 19.6834 14.6666 19.6834C14.3611 19.6834 14.0937 19.5689 13.8645 19.3397L6.8062 12.3043C6.62287 12.1209 6.48537 11.9147 6.3937 11.6855C6.30204 11.4564 6.2562 11.2272 6.2562 10.998C6.2562 10.7689 6.30204 10.5397 6.3937 10.3105C6.48537 10.0814 6.62287 9.87511 6.8062 9.69178L13.8645 2.63344C14.0937 2.40428 14.3649 2.29351 14.6781 2.30115C14.9913 2.30879 15.2625 2.42719 15.4916 2.65636C15.7208 2.88553 15.8354 3.15289 15.8354 3.45844C15.8354 3.764 15.7208 4.03136 15.4916 4.26053L8.75412 10.998Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    .visual .ctrl_wrap button.btn_next {
+        margin-left: 10px;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_82_24634' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='22' height='22'%3E%3Crect width='22' height='22' transform='matrix(-1 0 0 1 22 0)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_82_24634)'%3E%3Cpath d='M13.2459 10.998L6.50837 17.7355C6.27921 17.9647 6.16844 18.2321 6.17608 18.5376C6.18372 18.8432 6.30212 19.1105 6.53129 19.3397C6.76046 19.5689 7.02782 19.6834 7.33337 19.6834C7.63893 19.6834 7.90629 19.5689 8.13546 19.3397L15.1938 12.3043C15.3771 12.1209 15.5146 11.9147 15.6063 11.6855C15.698 11.4564 15.7438 11.2272 15.7438 10.998C15.7438 10.7689 15.698 10.5397 15.6063 10.3105C15.5146 10.0814 15.3771 9.87511 15.1938 9.69178L8.13546 2.63344C7.90629 2.40428 7.63511 2.29351 7.32191 2.30115C7.00872 2.30879 6.73754 2.42719 6.50837 2.65636C6.27921 2.88553 6.16462 3.15289 6.16462 3.45844C6.16462 3.764 6.27921 4.03136 6.50837 4.26053L13.2459 10.998Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    .visual .ctrl_wrap button.btn_play {
+        display: none; /* 정지 버튼을 눌렀을 떄만 나옴 */
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_121_6' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' transform='matrix(-1 0 0 1 24 0)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_121_6)'%3E%3Cpath d='M17.675 12.8492C17.825 12.7492 17.9375 12.6242 18.0125 12.4742C18.0875 12.3242 18.125 12.1659 18.125 11.9992C18.125 11.8326 18.0875 11.6742 18.0125 11.5242C17.9375 11.3742 17.825 11.2492 17.675 11.1492L9.525 5.97422C9.44167 5.92422 9.35417 5.88672 9.2625 5.86172C9.17083 5.83672 9.08333 5.82422 9 5.82422C8.73333 5.82422 8.5 5.92005 8.3 6.11172C8.1 6.30339 8 6.54089 8 6.82422V17.1742C8 17.4576 8.1 17.6951 8.3 17.8867C8.5 18.0784 8.73333 18.1742 9 18.1742C9.08333 18.1742 9.17083 18.1617 9.2625 18.1367C9.35417 18.1117 9.44167 18.0742 9.525 18.0242L17.675 12.8492Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    .visual .ctrl_wrap button.btn_stop {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_121_3' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect width='24' height='24' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_121_3)'%3E%3Cpath d='M16 19.0039C15.45 19.0039 14.9792 18.8081 14.5875 18.4164C14.1958 18.0247 14 17.5539 14 17.0039V7.00391C14 6.45391 14.1958 5.98307 14.5875 5.59141C14.9792 5.19974 15.45 5.00391 16 5.00391C16.55 5.00391 17.0208 5.19974 17.4125 5.59141C17.8042 5.98307 18 6.45391 18 7.00391V17.0039C18 17.5539 17.8042 18.0247 17.4125 18.4164C17.0208 18.8081 16.55 19.0039 16 19.0039ZM8 19.0039C7.45 19.0039 6.97917 18.8081 6.5875 18.4164C6.19583 18.0247 6 17.5539 6 17.0039V7.00391C6 6.45391 6.19583 5.98307 6.5875 5.59141C6.97917 5.19974 7.45 5.00391 8 5.00391C8.55 5.00391 9.02083 5.19974 9.4125 5.59141C9.80417 5.98307 10 6.45391 10 7.00391V17.0039C10 17.5539 9.80417 18.0247 9.4125 18.4164C9.02083 18.8081 8.55 19.0039 8 19.0039Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+     
+} /* @media */
+
+@media screen and (max-width:1600px) {
+    .visual .swiper .inner {
+        margin: 0 140px;
+    }
+    .visual .ctrl_wrap {
+        right: 140px;
+        bottom: 19%;
+    }
+} /* @media */
+
+@media screen and (max-width:1200px) {
+    .visual .swiper .swiper-slide h3::after {
+        left: 25%; /* ????????? */
+        bottom: 230px;
+        width: 727px;
+        height: 81px;
+    }
+} /* @media */
+
+@media screen and (max-width:1024px) {
+    .visual .swiper .swiper-slide::before {
+        display: none;
+    }
+    .visual .swiper .swiper-slide h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 245px;
+        width: 624px;
+        height: 70px;
+    }   
+    .visual .swiper .inner {
+        margin: 0 0 0 20px;
+        bottom: 21%;
+    }
+    .visual .ctrl_wrap {
+        right: 140px;
+        bottom: 19%;
+    }
+} /* @media */
+
+
+@media screen and (max-width:768px) {
+    .visual .swiper .swiper-slide .wrapper {
+        padding: 0 0 370px 0;
+    }
+
+    .visual .swiper .swiper-slide h3 {
+        text-align: center;
+    }
+
+    .visual .swiper .swiper-slide h3::after {
+        bottom: 42%;
+        width: 384px;
+        height: 43px;
+    }
+    
+    
+    .visual .swiper .inner {
+        max-width: 100%;
+        width: auto;
+        margin: 0;
+        padding: 0; 
+        position: relative;
+
+        bottom: 5%;
+    }
+    .visual .swiper .paging {
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+    }
+
+    .visual .swiper .paging .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
+    .visual .swiper .paging .swiper-pagination-bullet-active {
+        width: 12px;
+        height: 12px;
+    }
+} /* @media */
+
+
+@media screen and (max-width:425px) {
+
+    .visual .swiper .swiper-slide h3 br {
+        display: none;
+    }
+    .visual .swiper .swiper-slide h3::after {
+        width: 348px;
+        height: 39px;
+    }
+} /* @media */
+
+
+
+.tit_font {
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+}
+
+
+.service h2 {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#fp-nav {
+    top: 50%;
+}
+
+#fp-nav.fp-left {
+    left: 30px;
+}
+
+#fp-nav ul li {
+    width: 40px;
+    height: auto;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#fp-nav ul li:first-child {
+    margin-top: 0;
+}
+#fp-nav ul li:last-child {
+    margin: 0;
+}
+#fp-nav ul li a {
+    position: absolute;
+    left: 4px;
+    top: 15px;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 50%;
+}
+#fp-nav ul li a.active {
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 3px; /* ?????????? */
+}
+#fp-nav ul li a.active::before {
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    left: -6px;
+    top: -6px;
+}
+
+
+#fp-nav ul li a span {
+    display: none; /* 숨김 */
+}
+#fp-nav ul li .fp-tooltip {
+    position: relative;
+    top: 3px; /* ????????? */
+    font-size: 17px;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 0;
+
+    color: transparent;
+}
+#fp-nav ul li:hover a.active + .fp-tooltip {
+    color: #fff; /* ??????????????? */
+    font-size: 17px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+#fp-nav ul li .fp-tooltip.fp-left {
+    left: auto;
+}
+
+#fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active+.fp-tooltip {
+    width: 15px;
+}
+
+
+
+@media screen and (max-width:1024px) {
+    #fp-nav {
+        display: none !important;
+    }
+}
+
+
+/* ############# 배경이 횐색일 때 ############ */
+body.bg_white #fp-nav ul li a {
+    background-color: #cccccc;
+}
+body.bg_white #fp-nav ul li a.active {
+    background-color: var(--base-color);
+}
+body.bg_white #fp-nav ul li a.active::before {
+    border: 1px solid var(--base-color);
+}
+body.bg_white #fp-nav ul li:hover a.active + .fp-tooltip {
+    color: var(--base-color);
+}
+
+
