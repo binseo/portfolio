@@ -30,8 +30,14 @@ html, body {
 
 @media screen and (max-width:1024px){ /* 20 + 20 = 40 + 1260 = 1300  */
     .wrapper {
-    width: auto;
-    margin: 0 20px;
+        width: auto;
+        margin: 0 20px;
+    }
+}
+@media screen and (max-width:900px){ 
+    .wrapper {
+        width: auto;
+        padding: 0;
     }
 }
 
