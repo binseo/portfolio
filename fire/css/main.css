@@ -931,7 +931,9 @@
     box-shadow: 0 0 15px 0 rgba(85, 85, 85, 0.2);
     background-color: #fff;
     border-radius: 20px;
+    position: relative;
 }
+
 .news .inner .notice .notice_box .tab_item ul li a strong {
     padding: 5px 15px;
     background-color: var(--main-color);
@@ -1250,3 +1252,20 @@ body.bg_white #fp-nav ul li:hover a.active + .fp-tooltip {
 }
 
 
+.line {
+    width: 300px; height:321px; /* 영역안에 선이 가능한 짤리지 않는 선에서 위아래 가운데로 배치됨 (선이 두꺼우면 짤릴 수 있음) */
+    fill: none; /* fill을 none처리하지 않으면 면색이 들어감 */
+}
+.line:hover rect {
+    stroke: #f60; /* 선색 */
+    stroke-width: 5px; /* 선두께 */
+    stroke-linecap: round; /* 모서리 처리 - round:둥글게, butt:네모나게, square:네모나게 연장 */
+    stroke-dasharray: 2500; /* 선의 총길이 인데 애니메이션을 주기 전에 어느정도인지 값을 줘봐야함 */
+    stroke-dashoffset: 0; /* 무조건 0 */
+    animation-name: lin_animation; /* 애니메이션 이름 */
+    animation-duration: 3s; /* 애니메이션이 실행되는 시간 */
+}
+@keyframes lin_animation {
+    0% {stroke-dashoffset: 2500;} /* 위에서 path에 준 값도 동일 */
+    100% {stroke-dashoffset: 0;}
+}
