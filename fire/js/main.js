@@ -137,7 +137,7 @@ $(document).ready(function(){
 
 	const notice_box_swiper = new Swiper('.notice_box .swiper', { /* 팝업을 감싼는 요소의 class명 */
 		slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+		spaceBetween: 4, /* 팝업과 팝업 사이 여백 */
 		breakpoints: {
 			1024: {    /* 640px 이상일때 적용 */
 				spaceBetween: 9,
@@ -161,14 +161,13 @@ $(document).ready(function(){
 		slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            767: {    /* 640px 이상일때 적용 */
+			767: {    /* 640px 이상일때 적용 */
                 spaceBetween: 16,
             },
             768: {    /* 640px 이상일때 적용 */
                 spaceBetween: 24,
             },
-
-        },
+		},
 
 		//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
@@ -203,6 +202,39 @@ $(document).ready(function(){
 
 	/********************************** notice_popup swiper :: 끝 ******************************/
 
+
+    const action_swiper = new Swiper('.action .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 768px 이상일때 적용 */
+                spaceBetween: 24,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+        navigation: {
+            nextEl: '.action .list .group .ctrl_wrap button.btn_next',
+            prevEl: '.action .list .group .ctrl_wrap button.btn_prev',
+        },
+        on: {
+            slideChange: function() {
+                const activeSlide = this.slides[this.activeIndex]
+                const activeSlideWidth = activeSlide.offsetWidth
+                const otherSlides = this.slides[this.previousIndex]
+                const otherSlideWidth = otherSlides.offsetWidth			
+                const slideWidthDifference = activeSlideWidth - otherSlideWidth;
+                this.setTranslate(this.translate - slideWidthDifference);
+            },
+            slideChangeTransitionEnd: function() {
+                // 전환이 끝나면 Swiper를 다시 업데이트
+                setTimeout(() => {
+                    this.update();
+                }, 100);  // 잠시 딜레이를 주고 업데이트
+            }
+        },
+    });
 
 
 
