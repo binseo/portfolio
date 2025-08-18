@@ -1611,6 +1611,175 @@
 
 
 /* center 해야함 !!! */
+.center .wrapper {
+    margin-top: 100px;
+}
+.center .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.center .tit h2 {
+    margin: 0 0 30px 0;
+}
+.center .list {
+    position: relative;
+    /* width: calc(100% - 594px); */
+}
+.center .list .item {
+    padding: 12px;
+    display: block;
+}
+.center .list .item a {
+    display: block;
+    position: relative;
+    padding: 40px;
+    width: 321px;
+    height: 230px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px 0 rgba(85, 85, 85, 0.2);
+}
+.center .list .item a strong {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: var(--tit-line-height);
+    color: var(--tit-color);
+}
+.center .list .item:nth-child(1) {
+    position: absolute;
+    left: -344px;
+    top: 126px;
+}
+.center .list .item a::after {
+    content: "";
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+}
+.center .list .item.item1 a::after {
+    background: url(../images/main/center_item1.svg) no-repeat center center / cover;
+}
+.center .list .item.item2 a::after {
+    background: url(../images/main/center_item2.svg) no-repeat center center / cover;
+}
+.center .list .item.item3 a::after {
+    background: url(../images/main/center_item3.svg) no-repeat center center / cover;
+}
+
+@media screen and (min-width:1025px) {
+    .center .list .item a:hover {
+        background-color: var(--main-color);
+    }
+    .center .list .item a:hover strong {
+        color: #fff;
+    }
+    .center .list .item.item1 a:hover::after {
+        background: url(../images/main/center_item1_w.svg) no-repeat center center / cover;
+    }
+    .center .list .item.item2 a:hover::after {
+        background: url(../images/main/center_item2_w.svg) no-repeat center center / cover;
+    }
+    .center .list .item.item3 a:hover::after {
+        background: url(../images/main/center_item3_w.svg) no-repeat center center / cover;
+    }
+
+}/* @media */
+
+@media screen and (max-width:1300px) {
+    .center .list .item:nth-child(1) {
+        left: -306px;
+    }
+    .center .list .item a {
+        width: 280px;
+        padding: 35px;
+    }
+    .center .list .item a strong {
+        font-size: 25px;
+    }
+    .center .list .item a::after {
+        right: 35px;
+        bottom: 35px;
+        width: 40px;
+        height: 40px;
+    }
+}/* @media */
+
+@media screen and (max-width:1240px) {
+    .center .list .item:nth-child(1) {
+        left: -270px;
+    }
+    .center .list .item a {
+        width: 245px;
+    }
+}/* @media */
+
+@media screen and (max-width:1160px) {
+    .center .tit {
+        width: 45%;
+    }
+    .center .tit p br {
+        display: none;
+    }
+    .center .list {
+        width: 50%;
+    }
+
+    .center .list .item:nth-child(1) {
+        position: relative;
+        left: auto;
+        top: auto;
+    }
+
+    .center .list .item a {
+        position: relative;
+        padding: 35px 30px 30px 30px;
+        width: 100%;
+        height: 100px;
+        border-radius: 10px;
+    }
+    .center .list .item a::after {
+        bottom: 30px;
+        width: 37px;
+        height: 37px;
+    }
+}/* @media */
+
+@media screen and (max-width:768px) {
+
+    .center .wrapper {
+        margin-top: 80px;
+    }
+    .center .inner {
+        display: block;
+    }
+    .center .tit {
+        width: 100%;
+        text-align: center;
+    }
+    .center .tit p {
+        display: none;
+    }
+    .center .list {
+        width: 100%;
+    }
+    .center .list .item {
+        padding: 0;
+        padding-bottom: 20px;
+        display: block;
+    }
+    .center .list .item a strong {
+        font-size: 22px;
+    }
+
+    .center .list .item a::after {
+        bottom: 33px;
+        width: 35px;
+        height: 35px;
+    }
+
+}/* @media */
 
 
 
